@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ageCheck</title>
+</head>
+<style>
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(115deg, #3cc5d7, #47d794);
+}
+h1{
+    margin-bottom: 10px;
+    background: rgb(255, 245, 245);
+}
+.age {
+    background: rgb(255, 245, 245);
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 500px;
+    margin-top: 50%;
+    text-align: center;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#bd {
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    background: white;
+}
+#btn {
+    margin-top: 10px;
+    width: 50%;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    background: linear-gradient(115deg, #12063b, #09555c);
+    color: white;
+}
+#btn:hover {
+    background: linear-gradient(115deg, #09555c, #12063b);
+}
+label {
+    margin-bottom: 5px;
+    font-size: 16px;
+    background: rgb(255, 245, 245);
+}
+.result {
+    font-size: 20px;
+    background: rgb(255, 245, 245);
+}
+</style>
+<body>
+    <div class="age">
+        <h1>CEK USIA</h1>
+        <label>masukan tahun kelahiran anda:</label>
+        <input type="number" placeholder="CONTOH: 1900" id="bd">
+        <button id="btn" onclick="checkAge()">PENCET BOY</button>
+        <p class="result" id="result"></p>
+    </div>
+
+    <script>
+      
+
+        function checkAge() {
+            var birthDayInput = document.getElementById("bd");
+            var birthday = birthDayInput.value;
+
+
+            const now = new Date().getFullYear();
+            const calculate = now - birthday
+            
+            const result = document.getElementById("result")
+            result.innerHTML = "usia anda: "+ calculate
+        }
+    </script>
+</body>
+</html>
